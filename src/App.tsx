@@ -1,25 +1,75 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import GroupRanking from "./pages/GroupRanking";
+import UsersGroups from "./pages/UsersGroups";
+import HomePage from "./pages/HomePage";
+import Auth from "./components/Auth";
+import MyUserExercises from "./pages/MyUserExercises";
+import UsersHistory from "./pages/UsersExercises";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/team-jo-project-4">
+        <Route
+          index
+          element={(
+            <Auth>
+              <Login />
+            </Auth>
+          )}
+        />
+        <Route
+          path="register"
+          element={(
+            <Auth>
+              <Register />
+            </Auth>
+          )}
+        />
+        <Route
+          path="home"
+          element={(
+            <Auth restricted>
+              <HomePage />
+            </Auth>
+          )}
+        />
+        <Route
+          path="groups"
+          element={(
+            <Auth restricted>
+              <UsersGroups />
+            </Auth>
+          )}
+        />
+        <Route
+          path="groups/:groupId"
+          element={(
+            <Auth restricted>
+              <GroupRanking />
+            </Auth>
+          )}
+        />
+        <Route
+          path="myUserExercises"
+          element={(
+            <Auth restricted>
+              <MyUserExercises />
+            </Auth>
+          )}
+        />
+        <Route
+          path="usersExercises"
+          element={(
+            <Auth restricted>
+              <UsersHistory />
+            </Auth>
+          )}
+        />
+      </Route>
+    </Routes>
   );
 }
 
