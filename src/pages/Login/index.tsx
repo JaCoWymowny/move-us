@@ -1,8 +1,15 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useAuthState } from "react-firebase-hooks/auth";
 import {
   AccountText,
-  Button, Container, Form, FormField, FormFieldError, Img, Input, Label, StyledLink, Wrapper,
+  Button,
+  Container,
+  Form,
+  FormField,
+  FormFieldError,
+  Input,
+  Label,
+  StyledLink,
+  Wrapper,
 } from "../../components/Form/styles";
 import authService from "../../services/authService";
 import { User } from "../../interfaces/dbData";
@@ -10,11 +17,13 @@ import { User } from "../../interfaces/dbData";
 type FormFields = Pick<User, "email" | "password">;
 
 function Login() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormFields>();
-  const onSubmit: SubmitHandler<FormFields> = (data) => authService
-    .logInWithEmailAndPassword(data.email, data.password);
-  const [user] = useAuthState(authService.getAuth());
-  console.log(user); // TODO remove later when protected routes implemented
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormFields>();
+  const onSubmit: SubmitHandler<FormFields> = (data) =>
+    authService.logInWithEmailAndPassword(data.email, data.password);
   const onSubmitError: SubmitHandler<any> = (data) => console.log(data, errors);
 
   return (
@@ -24,6 +33,8 @@ function Login() {
           <FormField>
             <Label>Enter your email</Label>
             <Input
+              id="email-input"
+              data-testid="email-input"
               type="email"
               autoComplete="email"
               {...register("email", {
@@ -35,11 +46,15 @@ function Login() {
               })}
               placeholder="Email"
             />
-            <FormFieldError>{errors.email?.type === "required" && "Email is required"}</FormFieldError>
+            <FormFieldError>
+              {errors.email?.type === "required" && "Email is required"}
+            </FormFieldError>
           </FormField>
           <FormField>
             <Label>Enter your password</Label>
             <Input
+              id="password-input"
+              data-testid="password-input"
               type="password"
               {...register("password", { required: true, minLength: 8 })}
               placeholder="Enter your password"
@@ -47,11 +62,10 @@ function Login() {
           </FormField>
           <Button>Login</Button>
           <AccountText>
-            Not a member yet?
-            {" "}
-            <StyledLink to="/team-jo-project-4/register">Register</StyledLink>
-            {" "}
-            now
+            Not a member yet?{" "}
+            <StyledLink to="/team-jo-project-4/register">
+              Register now
+            </StyledLink>{" "}
           </AccountText>
         </Form>
       </Wrapper>

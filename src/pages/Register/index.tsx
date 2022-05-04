@@ -2,7 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import {
   AccountText,
-  Button, Container, Form, FormField, FormFieldError, Img, Input, Label, StyledLink, Wrapper,
+  Button, Container, Form, FormField, FormFieldError, Input, Label, StyledLink, Wrapper,
 } from "../../components/Form/styles";
 import { User } from "../../interfaces/dbData";
 import authService from "../../services/authService";
@@ -17,7 +17,7 @@ function Register() {
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await authService
       .registerWithEmailAndPassword(data.name, data.surname, data.login, data.email, data.password);
-    navigate({ pathname: "/team-jo-project-4" });
+    navigate({ pathname: "/team-jo-project-4/home" });
   };
   const onSubmitError: SubmitHandler<any> = (data) => console.log(data, errors);
 
@@ -40,7 +40,7 @@ function Register() {
             </FormFieldError>
           </FormField>
           <FormField>
-            <Label>Eneter your surname</Label>
+            <Label>Enter your surname</Label>
             <Input
               type="text"
               autoComplete="family-name"
@@ -114,9 +114,8 @@ function Register() {
           <AccountText>
             Already have an account?
             {" "}
-            <StyledLink to="/team-jo-project-4">Login</StyledLink>
+            <StyledLink to="/team-jo-project-4">Login now</StyledLink>
             {" "}
-            now.
           </AccountText>
         </Form>
       </Wrapper>

@@ -1,7 +1,9 @@
 {
-  "name": "move-us",
+  "name": "team-jo-project-4",
+  "description": "CodersCamp 2021 - Team Jan Owsiany - Project 4",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://coderscamp2021.github.io/team-jo-project-4/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -45,7 +47,7 @@
     ]
   },
   "lint-staged": {
-    "**/*.{js,css,html,md,json}": "prettier --write"
+    "**/*.{js,ts,tsx,css,html,md,json}": "prettier --write"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.25",

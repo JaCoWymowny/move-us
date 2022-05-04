@@ -1,35 +1,30 @@
-import { getFirestore, collection, query, where, getDocs, addDoc } from "firebase/firestore";
-import { Activity, User } from "../interfaces/dbData";
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+  addDoc,
+} from "firebase/firestore";
+import { Activity } from "../interfaces/dbData";
 
 class ActivityService {
   db = getFirestore();
 
-  getMyUser = async (userId: string): Promise<User> => {
-    let userRef: any = [];
-    const q = query(collection(this.db, "users"), where("uid", "==", userId));
+  getActivityCollection = async (userId: string) => {
+    const actRef: Activity[] = [];
+    const q = query(
+      collection(this.db, "activities"),
+      where("uid", "==", userId)
+    );
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((document) => {
-      userRef = (document.id, " => ", document.data());
+      actRef.push(document.data() as Activity);
     });
-    return userRef;
+    return actRef;
   };
 
-  getUsers = async () => {
-    const response = await getDocs(collection(getFirestore(), "users"));
-    return response?.docs.map((document) => document.data() as User);
-  };
-
-  getActivity = async (userId: string) => {
-    let userRef: Activity[] = [];
-    const q = query(collection(this.db, "users"), where("uid", "==", userId));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((document) => {
-      userRef = (document.id, " => ", document.data().activities);
-    });
-    return userRef;
-  };
-
-  insert = async (activity: Activity) => {
+  insert = async (activity: Activity, userId: string) => {
     const activityRef = collection(this.db, "activities");
     try {
       const res = await addDoc(activityRef, {
@@ -37,10 +32,11 @@ class ActivityService {
         date: activity.date,
         duration: activity.duration,
         score: activity.score,
+        uid: userId,
       });
       return res.id;
     } catch (e) {
-      console.error("Error adding document: ", e);
+      alert(e);
     }
   };
 }

@@ -1,31 +1,25 @@
 import ExercisesTable from "../../components/ActivityTable";
-import { Img, BackgroundContainer, Header, Wrapper, LineWrapper } from "./styles";
-import image from "./testimg.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import authService from "../../services/authService";
-import ActivityService from "../../services/activityService";
-import { useState } from "react";
+import { BackgroundContainer, Wrapper, LineWrapper } from "./styles";
+import { useContext } from "react";
+import EditableProfilePicture from "../../components/EditableProfilePicture";
+import { UserContext } from "../../context/UserContextProvider";
 
 function MyUserExercises() {
-  const [user, loading] = useAuthState(authService.getAuth());
-  const [userTittle, setUserTittle] = useState("");
-  if (loading || !user) {
+  const { user, isLoading } = useContext(UserContext);
+
+  if (isLoading || !user) {
     return null;
   }
-  ActivityService.getMyUser(user.uid).then((data) => {
-    const username = `${data.name} ${data.surname}`;
-    setUserTittle(username);
-  });
+
   return (
     <BackgroundContainer>
-      <Header />
       <Wrapper>
         <div className="UserInformationContainer">
-          <Img src={image} alt="" />
-          <span>{userTittle}</span>
+          <EditableProfilePicture />
+          <span>{user.name} {user.surname}</span>
         </div>
         <LineWrapper>
-          <ExercisesTable userId={user.uid} isButtonVisible />
+          <ExercisesTable userId={user.uid} isButtonVisible userScore={user.score} />
         </LineWrapper>
       </Wrapper>
     </BackgroundContainer>
