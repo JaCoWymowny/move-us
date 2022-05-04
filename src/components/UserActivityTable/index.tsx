@@ -24,7 +24,7 @@ interface Props {
   isButtonVisible?: boolean;
 }
 
-const ExercisesTable: FC<Props> = ({ userScore, userId, isButtonVisible }) => {
+const UserActivityTable: FC<Props> = ({ userScore, userId, isButtonVisible }) => {
   const [currentExercises, setCurrentExercises] = useState<Activity[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [ExercisesPerPage] = useState(7);
@@ -36,7 +36,6 @@ const ExercisesTable: FC<Props> = ({ userScore, userId, isButtonVisible }) => {
       });
     }
   }, []);
-
   const indexOfLastActivity = currentPage * ExercisesPerPage;
   const indexOfFirstActivity = indexOfLastActivity - ExercisesPerPage;
   const currentPageActivities = currentExercises.slice(
@@ -122,4 +121,4 @@ const ExercisesTable: FC<Props> = ({ userScore, userId, isButtonVisible }) => {
   );
 };
 
-export default ExercisesTable;
+export default UserActivityTable;
