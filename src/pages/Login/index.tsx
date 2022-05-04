@@ -63,7 +63,7 @@ function Login() {
           <Button>Login</Button>
           <AccountText>
             Not a member yet?{" "}
-            <StyledLink to="/move-us/register">
+            <StyledLink to="/register">
               Register now
             </StyledLink>{" "}
           </AccountText>

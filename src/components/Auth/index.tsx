@@ -16,8 +16,8 @@ const Auth: React.FC<Props> = ({ restricted, children }: Props): JSX.Element => 
     if (isLoading) {
       return;
     }
-    if (user && !restricted) navigate("/move-us/home");
-    if (!user && restricted) navigate("/move-us");
+    if (user && !restricted) navigate("/home");
+    if (!user && restricted) navigate("/");
   }, [user, isLoading]);
 
   if (isLoading) {

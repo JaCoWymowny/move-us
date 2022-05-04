@@ -35,9 +35,9 @@ const RankingTable: FC<Props> = ({ groupUsers }) => {
   const navigate = useNavigate();
   const redirectToProfile = (groupUser: UsersWithRankPosition) => {
     if (user?.email === groupUser.email) {
-      navigate("/move-us/my-exercises");
+      navigate("/my-exercises");
     } else {
-      navigate(`/move-us/user-exercises/${groupUser.uid}`);
+      navigate(`/user-exercises/${groupUser.uid}`);
     }
   };
 

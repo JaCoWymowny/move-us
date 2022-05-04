@@ -15,24 +15,24 @@ function HomePage() {
     <Container>
       <Wrapper>
         <Tiles>
-          <RankTile onClick={() => navigate("/move-us/overall-ranking")}>
+          <RankTile onClick={() => navigate("/overall-ranking")}>
             <H3>
               Overall ranking
             </H3>
           </RankTile>
-          <GroupsTile onClick={() => navigate("/move-us/groups")}>
+          <GroupsTile onClick={() => navigate("/groups")}>
             <H3>
               Groups
             </H3>
           </GroupsTile>
-          <ActivityTile onClick={() => navigate("/move-us/my-exercises")}>
+          <ActivityTile onClick={() => navigate("/my-exercises")}>
             <H3>
               Activity
             </H3>
           </ActivityTile>
         </Tiles>
         <Tiles>
-          <WorkoutTile onClick={() => navigate("/move-us/workout")}>
+          <WorkoutTile onClick={() => navigate("/workout")}>
             <H3>
               Workout
             </H3>

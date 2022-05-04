@@ -11,7 +11,7 @@ const LogoutButton = () => {
 
   const handleButtonClick = () => {
     signOut(authService.getAuth()).then(() => {
-      navigate("/move-us");
+      navigate("/");
     });
   };
   return (
@@ -28,12 +28,12 @@ function Header() {
   const { user, isLoading } = useContext(UserContext);
 
   const handleProfilePictureClick = () => {
-    navigate("/move-us/my-exercises");
+    navigate("/my-exercises");
   };
 
   return (
     <Container>
-      <Img src={`${process.env.PUBLIC_URL}/assets/logo.png`} onClick={() => navigate("/move-us/home")} />
+      <Img src={`${process.env.PUBLIC_URL}/assets/logo.png`} onClick={() => navigate("/home")} />
       {user && !isLoading && (
         <RightSection>
           <ProfilePicture avatarUrl={user.avatarUrl} onClick={handleProfilePictureClick} />

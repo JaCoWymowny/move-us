@@ -33,7 +33,7 @@ const UsersGroups = (): JSX.Element => {
 
   const usersGroupsTiles: JSX.Element[] = usersOwnedGroups.map((group: Group) => {
     return (
-      <Link to={`/move-us/groups/${group.uid}`} key={group.uid}>
+      <Link to={`/groups/${group.uid}`} key={group.uid}>
         <Tile img={group.imageUrl}>
           <TileContent>
             {group.name}
@@ -45,7 +45,7 @@ const UsersGroups = (): JSX.Element => {
 
   const groupsUserBelongsToTiles: JSX.Element[] = groupsUserBelongsTo.map((group: Group) => {
     return (
-      <Link to={`/move-us/groups/${group.uid}`} key={group.uid}>
+      <Link to={`/groups/${group.uid}`} key={group.uid}>
         <Tile img={group.imageUrl}>
           <TileContent>
             {group.name}

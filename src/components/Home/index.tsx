@@ -12,12 +12,12 @@ function Home() {
             Overall ranking
           </H3>
         </RankTile>
-        <GroupsTile onClick={() => navigate("/move-us/groups")}>
+        <GroupsTile onClick={() => navigate("/groups")}>
           <H3>
             Groups
           </H3>
         </GroupsTile>
-        <ActivityTile onClick={() => navigate("/move-us/MyUserExercises")}>
+        <ActivityTile onClick={() => navigate("/MyUserExercises")}>
           <H3>
             Activity
           </H3>
