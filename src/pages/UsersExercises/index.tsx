@@ -1,4 +1,4 @@
-import ExercisesTable from "../../components/ActivityTable";
+import UserActivityTable from "../../components/UserActivityTable";
 import { BackgroundContainer, Header, Wrapper, LineWrapper } from "./styles";
 import { Fragment, useEffect, useState } from "react";
 import { User } from "../../interfaces/dbData";
@@ -29,7 +29,7 @@ function UsersExercises() {
                   </span>
                 </div>
                 <LineWrapper>
-                  <ExercisesTable
+                  <UserActivityTable
                     userId={selectedUser.uid}
                     userScore={selectedUser.score}
                   />

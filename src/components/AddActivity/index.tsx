@@ -10,12 +10,20 @@ import { useEffect, useState, useContext } from "react";
 import userService from "../../services/userService";
 import { DocumentData } from "firebase/firestore";
 import { UserContext } from "../../context/UserContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function AddActivity() {
   const modalContextValue = useContext(ModalContext);
+  const navigate = useNavigate();
+
+  const redirectToRouter = () => {
+    navigate("/home");
+    navigate("/my-exercises");
+  };
+
   const closeModalOnSuccess = () => {
     modalContextValue.setDisplayedComponent(null);
-    alert("You've added a new activity!");
+    redirectToRouter();
   };
   const { user } = useContext(UserContext);
   const {

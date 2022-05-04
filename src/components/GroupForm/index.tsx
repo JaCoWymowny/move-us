@@ -3,6 +3,7 @@ import { Header, ModalLabel } from "../Modal/style";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../services/firebase";
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Group, User } from "../../interfaces/dbData";
 import groupService from "../../services/groupService";
@@ -19,10 +20,18 @@ type FormFields = {
 };
 
 function GroupForm() {
+  const navigate = useNavigate();
   const modalContextValue = useContext(ModalContext);
   const [preview, setPreview] = useState<string | null>(null);
+
+  const redirectToRouter = () => {
+    navigate("/home");
+    navigate("/groups");
+  };
+
   const closeModalOnSuccess = () => {
     modalContextValue.setDisplayedComponent(null);
+    redirectToRouter();
   };
   const { user } = useContext(UserContext);
   const { register, setValue, handleSubmit, formState: { errors }, watch } = useForm<FormFields>();
