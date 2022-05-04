@@ -2,7 +2,7 @@
   "name": "move-us",
   "description": "Move us - App",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://jacowymowny.github.io/move-us/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
