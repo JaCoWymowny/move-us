@@ -58,14 +58,14 @@ exports[`Login matches snapshot 1`] = `
           class="sc-papXJ fnNQlX"
         >
           Not a member yet?
-           
+
           <a
             class="sc-jqUVSM lnxtzK"
-            href="/team-jo-project-4/register"
+            href="/move-us/register"
           >
             Register now
           </a>
-           
+
         </div>
       </form>
     </div>

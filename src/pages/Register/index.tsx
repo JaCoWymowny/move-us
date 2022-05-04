@@ -17,7 +17,7 @@ function Register() {
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await authService
       .registerWithEmailAndPassword(data.name, data.surname, data.login, data.email, data.password);
-    navigate({ pathname: "/team-jo-project-4/home" });
+    navigate({ pathname: "/move-us/home" });
   };
   const onSubmitError: SubmitHandler<any> = (data) => console.log(data, errors);
 
@@ -114,7 +114,7 @@ function Register() {
           <AccountText>
             Already have an account?
             {" "}
-            <StyledLink to="/team-jo-project-4">Login now</StyledLink>
+            <StyledLink to="/move-us">Login now</StyledLink>
             {" "}
           </AccountText>
         </Form>

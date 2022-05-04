@@ -1,9 +1,9 @@
 {
-  "name": "team-jo-project-4",
-  "description": "CodersCamp 2021 - Team Jan Owsiany - Project 4",
+  "name": "move-us",
+  "description": "Move us - App",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://coderscamp2021.github.io/team-jo-project-4/",
+  "homepage": "https://jacowymowny.github.io/move-us/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",

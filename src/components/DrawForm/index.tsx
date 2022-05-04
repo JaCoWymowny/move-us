@@ -15,7 +15,7 @@ function DrawForm() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormFields>();
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<FormFields> = (data) => {
-    navigate(`/team-jo-project-4/draw-exercises/${data.exercisesCount}`);
+    navigate(`/move-us/draw-exercises/${data.exercisesCount}`);
     modalContextValue.setDisplayedComponent(null);
   };
 
