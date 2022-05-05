@@ -6,10 +6,13 @@ import { Container, Exercise, H3, Tiles } from "./style";
 function Workout() {
   const modalContextValue = useContext(ModalContext);
 
+  const temporaryAlert = () => {
+    alert("Site under construction!");
+  };
   return (
     <Container>
       <Tiles>
-        <Exercise>
+        <Exercise onClick={temporaryAlert}>
           <H3>List of all exercises</H3>
         </Exercise>
         <Exercise

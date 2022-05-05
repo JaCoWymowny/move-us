@@ -50,12 +50,12 @@ filter: opacity(85%);
 
   @media (max-width: 850px) {
     width: 250px;
-    height: 150px;
+    height: 120px;
     margin: 0 auto 20px;
   }
 
   @media (max-width: 450px) {
-    width: 150px;
+    width: 120px;
   }
 `;
 
@@ -85,12 +85,12 @@ filter: opacity(85%);
 
   @media (max-width: 850px) {
     width: 250px;
-    height: 150px;
+    height: 120px;
     margin: 0 auto 20px;
   }
 
   @media (max-width: 450px) {
-    width: 150px;
+    width: 120px;
   }
 `;
 
@@ -120,12 +120,12 @@ filter: opacity(85%);
 
   @media (max-width: 850px) {
     width: 250px;
-    height: 150px;
+    height: 120px;
     margin: 0 auto;
   }
 
   @media (max-width: 450px) {
-    width: 150px;
+    width: 120px;
   }
 `;
 
@@ -155,12 +155,12 @@ filter: opacity(85%);
 
   @media (max-width: 850px) {
     width: 250px;
-    height: 150px;
+    height: 120px;
     margin: 0 auto;
   }
 
   @media (max-width: 450px) {
-    width: 150px;
+    width: 120px;
   }
 `;
 

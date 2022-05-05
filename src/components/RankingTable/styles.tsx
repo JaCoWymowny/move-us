@@ -40,6 +40,13 @@ export const GridChild = styled.div`
     &:nth-child(4n){
         border-right: none;
     }
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 10px;
+  }
 `;
 
 export const UserGridChild = styled(GridChild)`
@@ -48,6 +55,14 @@ cursor: pointer;
 export const GridHeader = styled(GridChild)`
     color: ${(props) => props.theme.colors.secondaryUi};
     font-size: 22px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 10px;
+  }
 `;
 
 export const BlankLine = styled.div`
