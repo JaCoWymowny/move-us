@@ -40,7 +40,14 @@ export const ScoreLine = styled.div`
     left: 66%;
     font-family: ${(props) => props.theme.fontFamily.primaryFont};
     font-size: 16px;
+    width: 60%;
     color: ${(props) => props.theme.colors.secondaryUi};
+  }
+  @media (max-width: 560px) {
+    .sumPosition {
+      font-size: 14px;
+      width: 40%;
+    }
   }
 `;
 
@@ -84,12 +91,19 @@ export const GridChild = styled.div`
     &:nth-child(4n){
         border-right: none;
     }
+  @media (max-width: 560px) {
+    font-size: 10px;
+  }
 `;
 
 export const GridHeader = styled(GridChild)`
   color: ${(props) => props.theme.colors.secondaryUi};
   font-size: 14px;
   min-height: 50px;
+
+  @media (max-width: 560px) {
+    font-size: 12px;
+  }
 `;
 
 export const BlankLine = styled.div`
