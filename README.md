@@ -14,7 +14,6 @@ Sports diary based on calisthenic exercises with training management option.
 * Application can store our achievements
 * We can make groups to more efficiency training
 * We can look to highscores sorted by points
-* 
 
 ## Technologies
 
