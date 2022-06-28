@@ -1,1 +1,26 @@
-An application that encourages sports activities. Project built in REACTJS + Typescript using interfaces - class and functional approach. Activities are saved in firebase. Only logged in users can view their own and other users' activities. The application collects relevant data, which you can later compare in the overall ranking in the form of points collected for the exercises performed and join the group together with other users. Very easy to expand and add new functionalities.
+# Move-US
+
+## Introduction
+Move-Us is an application and website, encouraging physical activity and competition for the result, which works to the advantage of everyone
+
+
+## Description
+Sports diary based on calisthenic exercises with training management option.
+
+
+## Features
+
+* Application has the user Authenticate handled by `Firebase`. 
+* Application can store our achievements
+* We can make groups to more efficienty training
+* We can look to highscores sorted by points
+* 
+
+## Technologies
+
+* React
+* Typescript / interfaces
+* ReactForm / Context / Pagination
+* Styled-component
+* Firebase
+* RWD
