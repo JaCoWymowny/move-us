@@ -1,8 +1,8 @@
 # Move-US
 
 
-![](demo1.PNG)
-![](demo2.PNG)
+![](demo1.png)
+![](demo2.png)
 ![](demo3.PNG)
 ![](demo4.PNG)
 ![](demo5.PNG)
